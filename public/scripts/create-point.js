@@ -5,7 +5,6 @@ function populateUFs(){
     fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
     .then( res => res.json())
     .then( states =>{
-
         for( const state of states ){
             ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
         }
@@ -17,6 +16,8 @@ populateUFs()
 function getCities(event){
     const citySelect = document.querySelector("select[name=city]")
     const stateInput = document.querySelector("input[name=state]")
+
+    const citiesInput = document.querySelector("input[name=citie]")
 
     const ufValue = event.target.value
     
@@ -31,11 +32,9 @@ function getCities(event){
     fetch(url)
     .then( res => res.json())
     .then( cities =>{
-        
         for( const city of cities ){
-            citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+            citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
         }
-
         citySelect.disabled = false
     })
 }
@@ -64,7 +63,6 @@ function handleSelectedItem(event){
     itemLi.classList.toggle("selected")
 
     const itemId = event.target.dataset.id
-    console.log()
 
     const alreadySelected = selectedItems.findIndex( function(item){
         const itemFound = item === itemId // Será True ou False
@@ -82,5 +80,6 @@ function handleSelectedItem(event){
     } else {
         selectedItems.push(itemId)
     }
+
     collectedItems.value = selectedItems
 }
