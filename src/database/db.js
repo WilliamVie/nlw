@@ -32,7 +32,7 @@ db.serialize( () => {
         city,
         items
     )VALUES(?,?,?,?,?,?,?);
-`
+
     const values = [
         "https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80",
         "Papersider",
