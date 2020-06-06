@@ -6,6 +6,7 @@ const db = new sqlite3.Database("./src/database/database.db")
 
 module.exports = db/*
 db.serialize( () => {
+    
     //Criar tabela
     
     db.run(`
@@ -62,7 +63,7 @@ db.serialize( () => {
     })
 
     //Deletar um dado da tabela
-    db.run(`DELETE FROM places WHERE id = ?`, [3], function(err){
+    db.run(`DELETE FROM places WHERE id = ?`, [], function(err){
         if(err){
             return console.log(err)
        }

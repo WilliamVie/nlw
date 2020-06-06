@@ -1,11 +1,11 @@
 body{
-    background: white;
+    background-image: linear-gradient(to bottom, #94FFB4, #D2FFE0, #E9FFF0);
 }
 
 body::after{
     content: "";
     position: absolute;
-    background-image: linear-gradient(to bottom, #F8F8FF, #FFFFFF, #C1FFC1);
+    background: #E9FFF0;
     top: 0;
     right: 0;
     left: 0;
