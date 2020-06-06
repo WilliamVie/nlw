@@ -70,13 +70,7 @@ server.post("/savepoint", (req, res) => {
     db.run(query, values, afterInsertData)
 })
 
-
-
-
-
-
-
-server.get("/search", function(req, res, rows){
+server.get("/search", function(req, res){
 
     const search = req.query.search
 
