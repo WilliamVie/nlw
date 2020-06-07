@@ -4,9 +4,9 @@ const sqlite3 = require("sqlite3").verbose()
 //Iniciar objeto de banco de dados
 const db = new sqlite3.Database("./src/database/database.db")
 
-module.exports = db/*
+module.exports = db
 db.serialize( () => {
-    
+  /*  
     //Criar tabela
     
     db.run(`
@@ -52,7 +52,7 @@ db.serialize( () => {
     }
 
     db.run(query, values, afterInsertData)
-
+*/
     //Consultar dados da tabela
     db.all(`SELECT * FROM places`, function(err, rows){
         if(err){
@@ -61,7 +61,7 @@ db.serialize( () => {
         console.log("Aqui estão os registros")
         console.log(rows)
     })
-
+/*
     //Deletar um dado da tabela
     db.run(`DELETE FROM places WHERE id = ?`, [], function(err){
         if(err){
@@ -69,5 +69,5 @@ db.serialize( () => {
        }
 
        console.log("Registro apagado com sucesso!")
-    })
-})*/
+    })*/
+})
